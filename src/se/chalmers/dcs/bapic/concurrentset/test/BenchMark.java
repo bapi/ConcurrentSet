@@ -31,7 +31,6 @@ import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
 import se.chalmers.dcs.bapic.concurrentset.utils.*;
 import se.chalmers.dcs.bapic.concurrentset.Sets.*;
-
 import java.io.IOException;
 import java.util.Random;
 

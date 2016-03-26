@@ -9,7 +9,6 @@ package se.chalmers.dcs.bapic.concurrentset.Sets;
 
 import java.util.LinkedList;
 import se.chalmers.dcs.bapic.concurrentset.utils.*;
-
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 /**

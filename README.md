@@ -1,5 +1,6 @@
 # ConcurrentSet
 This project contains following concurrent set algorithms:
+
 1) LazyList: Heller, S., Herlihy, M., Luchangco, V., Moir, M., Scherer III, W.N. and Shavit, N., 2005. A lazy concurrent list-based set algorithm. In Principles of Distributed Systems (pp. 3-16). Springer Berlin Heidelberg.
 
 2) HarrisLinkedList: Harris, T.L., 2001, October. A pragmatic implementation of non-blocking linked-lists. In DISC (Vol. 1, pp. 300-314).

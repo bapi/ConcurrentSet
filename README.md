@@ -19,4 +19,4 @@ This project contains following concurrent set algorithms:
 
 9) LFSkipList: A wrapper for java.util.concurrent.ConcurrentSkipListSet for comparison purpose.
 
-This is an Apache Ant managed project. To build, run ant in the project directory. For an optimized run, following command containing flags can be used: numactl --physcpubind=0-7,16-23 java -d64 -server -Xms4G -Xmx8G -cp ./lib/java-getopt-1.0.14.jar:./lib/jcip-annotations.jar:./lib/jna.jar:./dist/ConcurrentSet.jar se.chalmers.dcs.bapic.concurrentset.test.BenchMark
+This is an Apache Ant managed project. To build, run ant in the project directory. For an optimized run, following command containing flags can be used: java -d64 -server -Xms4G -Xmx8G -cp ./lib/java-getopt-1.0.14.jar:./lib/jcip-annotations.jar:./lib/jna.jar:./dist/ConcurrentSet.jar se.chalmers.dcs.bapic.concurrentset.test.BenchMark. Further, to bind the jvm threads on a NUMA machine, numactl --physcpubind=<nodes> can be used. For further info on numactl see its manpages.  

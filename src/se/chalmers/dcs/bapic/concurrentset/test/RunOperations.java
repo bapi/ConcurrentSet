@@ -30,8 +30,7 @@ package se.chalmers.dcs.bapic.concurrentset.test;
 import java.io.IOException;
 import org.apache.commons.math3.distribution.*;
 import java.util.Random;
-import se.chalmers.dcs.bapic.concurrentset.utils.K;
-import se.chalmers.dcs.bapic.concurrentset.utils.SetADT;
+import se.chalmers.dcs.bapic.concurrentset.utils.*;
 
 /**
  *
@@ -88,8 +87,8 @@ public class RunOperations implements Runnable {
 
         while ( ! RunController.stopFlag) {
             int chooseOperation = randOp.nextInt(100);
-//            double key = randKey.nextInt(keyRange);//Generates a random data point from a Uniform distribution.
-            double key = z.sample();//Generates a random data point from a Zipfian distribution with exponent 5.
+            double key = Tools.randomInRange(randKey, 0, keyRange);//Generates a random data point from a Uniform distribution.
+//            double key = z.sample();//Generates a random data point from a Zipfian distribution with exponent 5.
             if (chooseOperation < addPercent) {
                 set.add(new K(key));
             }

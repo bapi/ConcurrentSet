@@ -27,6 +27,7 @@
  */
 package se.chalmers.dcs.bapic.concurrentset.utils;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -69,6 +70,13 @@ public class Tools {
         long used1 = tot1 - free1;
 
         return used1;
+    }
+
+    public static double randomInRange(Random random, double min, double max) {
+        double range = max - min;
+        double scaled = random.nextDouble() * range;
+        double shifted = scaled + min;
+        return shifted; // == (rand.nextDouble() * (max-min)) + min;
     }
 
     /**

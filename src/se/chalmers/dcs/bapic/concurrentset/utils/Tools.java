@@ -73,10 +73,7 @@ public class Tools {
     }
 
     public static double randomInRange(Random random, double min, double max) {
-        double range = max - min;
-        double scaled = random.nextDouble() * range;
-        double shifted = scaled + min;
-        return shifted; // == (rand.nextDouble() * (max-min)) + min;
+        return (random.nextDouble() * (max-min)) + min;
     }
 
     /**

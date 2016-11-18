@@ -309,12 +309,6 @@ public class HelpAwareInternalLFBST implements SetADT {
         if (node == null || node.key.equals(K.MaxValue2)) {
             return;
         }
-//        if (node.left == null) {
-//            if (node.right == null) {//if the node is not removed and is leaf
-
-//            }
-//            return;
-//        }
         inorder(node.left, list);
         list.add(node.key);
         inorder(node.right, list);

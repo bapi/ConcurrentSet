@@ -19,6 +19,8 @@ This project contains following concurrent set algorithms:
 
 9) LFSkipList: A wrapper for java.util.concurrent.ConcurrentSkipListSet for comparison purpose.
 
+10) HelpAwareInternalLFBST: A modified version of the lock-free internal BST algorithm of Chatterjee, B., Nguyen, N. and Tsigas, P. (2014) Efficient Lock-free Binary Search Trees in PODC 2014 (p.p. 322-331). 
+
 This is an Apache Ant managed project. To build, run ant in the project directory. For an optimized run, following command containing flags can be used: java -d64 -Xms4G -Xmx8G -cp ./dist/ConcurrentSet.jar se.chalmers.dcs.bapic.concurrentset.test.BenchMark (Assuming that the application is run on a 64-bit environment).
 
 Further, to bind the jvm threads on a NUMA machine, numactl --physcpubind=<nodes> can be used. For further info on numactl see its manpages.  

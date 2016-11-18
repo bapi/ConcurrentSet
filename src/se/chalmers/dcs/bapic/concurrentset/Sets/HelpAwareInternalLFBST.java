@@ -43,11 +43,11 @@ public class HelpAwareInternalLFBST implements SetADT {
             = AtomicReferenceFieldUpdater.newUpdater(Node.class, Node.class, "right");
     private static final AtomicReferenceFieldUpdater<Node, Node> pLinkUpdater
             = AtomicReferenceFieldUpdater.newUpdater(Node.class, Node.class, "preLink");
-    final Node cRoot;
+    final Node root;
 
     public HelpAwareInternalLFBST() {
-        cRoot = new Node(K.MaxValue0);
-        cRoot.left = new Node(K.MaxValue2, null, cRoot, null);
+        root = new Node(K.MaxValue0);
+        root.left = new Node(K.MaxValue2, null, root, null);
     }
 
     boolean casChild(Node n, Node cmp, Node newNode, boolean childDir) {
@@ -70,7 +70,7 @@ public class HelpAwareInternalLFBST implements SetADT {
 
     @Override
     public boolean contains(K key) {
-        Node curr = cRoot.left;
+        Node curr = root.left;
 
         while (curr.key.compareTo(K.MaxValue2)) {    // unless reach a thread link, run the while loop
             if (key.equals(curr.key)) {
@@ -86,7 +86,7 @@ public class HelpAwareInternalLFBST implements SetADT {
     public boolean add(K key) {
         Node par, curr, next;
         Node node = null, preNode, replacementNode;
-        par = cRoot;
+        par = root;
         retry:
         while (true) {
             curr = getChild(par, !par.key.compareTo(key));
@@ -152,7 +152,7 @@ public class HelpAwareInternalLFBST implements SetADT {
         Node par, curr, next;
         Node parent = null, marker, preNode, delNode = null, replacementNode;
         boolean mode = true;
-        par = cRoot;
+        par = root;
         retry:
         while (true) {
             curr = getChild(par, !par.key.compareTo(key));
@@ -306,13 +306,17 @@ public class HelpAwareInternalLFBST implements SetADT {
     }
 
     private void inorder(Node node, LinkedList<K> list) {
-        if (node.left == null) {
-            if (node.right == null) {//if the node is not removed and is leaf
-                list.add(node.key);
-            }
+        if (node == null || node.key.equals(K.MaxValue2)) {
             return;
         }
+//        if (node.left == null) {
+//            if (node.right == null) {//if the node is not removed and is leaf
+
+//            }
+//            return;
+//        }
         inorder(node.left, list);
+        list.add(node.key);
         inorder(node.right, list);
     }
 
@@ -322,7 +326,7 @@ public class HelpAwareInternalLFBST implements SetADT {
      */
     public boolean traversalTest() {
         LinkedList<K> keys = new LinkedList();
-        inorder(cRoot, keys);
+        inorder(root, keys);
         for (int i = 0; i < keys.size() - 1; i++) {
             if (!keys.get(i).compareTo(keys.get(i + 1))) {
                 return false;

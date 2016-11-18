@@ -68,6 +68,9 @@ public class BenchMark {
             case "HarrisLinkedList":
                 set = new HarrisLinkedList();
                 break;
+            case "HelpAwareInternalLFBST":
+                set = new HelpAwareInternalLFBST();
+                break;
             case "HelpOptimalLFList":
                 set = new HelpOptimalLFList();
                 break;

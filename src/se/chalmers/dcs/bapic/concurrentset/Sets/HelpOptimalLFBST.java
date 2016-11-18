@@ -58,7 +58,7 @@ public class HelpOptimalLFBST implements SetADT {
     }
 
     boolean isSplice(Node n) {
-        return n.key.equals(K.MinValue);
+        return n.key.equals(K.MinValue0);
     }
 
     boolean isDead(Node n) {
@@ -92,13 +92,13 @@ public class HelpOptimalLFBST implements SetADT {
     }
 
     Node getFlagged(Node child) {
-        return new Node(K.MinValue, child.left, child);
+        return new Node(K.MinValue0, child.left, child);
     }
 
     Node appendFlag(Node parent, boolean childDir) {
         while (true) {
             Node child = getChild(parent, childDir);
-            if (child.key.equals(K.MinValue) || child.right == child || casChild(parent, child, getFlagged(child), childDir)) {
+            if (child.key.equals(K.MinValue0) || child.right == child || casChild(parent, child, getFlagged(child), childDir)) {
                 return child;
             }
         }

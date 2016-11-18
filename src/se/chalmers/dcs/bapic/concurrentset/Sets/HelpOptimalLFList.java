@@ -45,7 +45,7 @@ public class HelpOptimalLFList implements SetADT {
         this.tailNext = new Node(K.MaxValue0);
         this.tail = new Node(K.MaxValue1, tailNext);
         this.headNext = new Node(K.MinValue1, tail);
-        this.head = new Node(K.MinValue, headNext);
+        this.head = new Node(K.MinValue0, headNext);
     }
 
     private Node getRef(Node n) {
@@ -135,7 +135,7 @@ public class HelpOptimalLFList implements SetADT {
                 if ( ! key.equals(cur.key) || nex.back != null) {
                     return false;
                 }
-                marker = new Node(pre, K.MinValue);
+                marker = new Node(pre, K.MinValue0);
                 while (true) {
                     marker.next = nex;
                     if (cur.casNext(nex, marker)) {

@@ -38,7 +38,7 @@ public class HarrisLinkedList implements SetADT {
     private static class Marker extends Node {
 
         private Marker(Node n) {
-            super(K.MinValue);
+            super(K.MinValue0);
             this.next = n;
         }
     }
@@ -53,7 +53,7 @@ public class HarrisLinkedList implements SetADT {
      * Constructor.
      */
     public HarrisLinkedList() {
-        head = new Node(K.MinValue);
+        head = new Node(K.MinValue0);
         tail = new Node(K.MaxValue0);
         head.next = tail;
     }

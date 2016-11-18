@@ -38,7 +38,7 @@ public class K {
     /**
      *
      */
-    public static final K MinValue = new K( - Double.MAX_VALUE);
+    public static final K MinValue0 = new K( - Double.MAX_VALUE);
 
     /**
      *

@@ -63,7 +63,7 @@ public class LazyList implements SetADT {
      * Constructor.
      */
     public LazyList() {
-        head = new Node(K.MinValue);
+        head = new Node(K.MinValue0);
         tail = new Node(K.MaxValue0);
         head.next = tail;
     }
